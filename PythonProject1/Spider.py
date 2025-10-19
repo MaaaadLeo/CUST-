@@ -52,14 +52,13 @@ def scrape_and_save(url, pages=5):
             print(f"发生网络错误: {e}")
             break
 
-        # 礼貌性延时
         time.sleep(1.5)
 
     if not all_comments:
         print("未能抓取到任何评论。")
         return None
 
-    # 保存到文件
+    # 保存
     file_name_txt = f'douban_comments_{movie_id}.txt'
     with open(file_name_txt, 'w', encoding='utf-8') as f:
         for comment in all_comments:
@@ -71,8 +70,8 @@ def scrape_and_save(url, pages=5):
     return file_name_txt
 
 
-# --- 安全锁 ---
-# 下面的代码只有在直接运行 Spider.py 时才会执行，用于快速测试
+# 安全锁
+# 只在直接运行 Spider.py 时才会执行
 if __name__ == '__main__':
     print("正在以独立模式运行 Spider.py 用于测试...")
     # 使用一个测试URL
