@@ -36,8 +36,8 @@ def generate_word_cloud(input_filename):
     print("正在清洗文本...")
     #中文(\u4e00-\u9fa5)、英文(a-zA-Z) 和 数字(0-9)
     cleaned_text = re.sub(r'[^\u4e00-\u9fa5a-zA-Z0-9]', ' ', comments_text)
-    #对词云生成影响较大
 
+    #对词云生成影响较大
     stopwords.add('电影')
     stopwords.add('一部')
 
